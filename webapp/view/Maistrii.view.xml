@@ -1,0 +1,33 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" controllerName="testTest.controller.Maistrii">
+	<App id="app">
+		<Page title="Maistrii" showNavButton="true" navButtonPress="onBack">
+			<content>
+				<!-- TTTTESTTT -->
+				<!-- TTTTESTTT -->
+				<Table noDataText="No data" id="maistriTable" items="{path: '/Maistrii'}">
+					<items>
+						<ColumnListItem id="__item0">
+							<cells>
+								<Text text="{Name}"></Text>
+							
+							</cells>
+						</ColumnListItem>
+					</items>
+					<headerToolbar>
+						<Toolbar>
+							<content>
+								<Label text="Maistrii"></Label>
+							</content>
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column width ="11rem">
+							<Label text="Nume maistru"></Label>
+						</Column>
+						
+					</columns>
+					</Table>
+				</content>
+			</Page>
+		</App>
+	</mvc:View>

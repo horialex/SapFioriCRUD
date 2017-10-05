@@ -1,0 +1,26 @@
+<mvc:View
+		  xmlns:mvc="sap.ui.core.mvc"
+		  xmlns="sap.m"
+		  xmlns:core="sap.ui.core"
+		  controllerName="testTest.controller.Master"
+		  xmlns:table="sap.ui.table"
+		  >
+			 <App id="app">
+				  <Page title="Master view">
+				  <content>
+				  
+				  	
+					  <VBox>
+					  <Label text="Welcome on the first view !" />
+					  <Button text="Navigate Products Page" press="onPressProducts" />
+					  <Button text="Navigate to maistrii page" press="onPressMaistrii" />
+					   <Button text="Navigate to Hori SAP page" press="onPressHoriSap" />
+					  </VBox>
+					  
+					
+					  
+					  
+				  </content>
+				  </Page>
+			  </App>
+</mvc:View>

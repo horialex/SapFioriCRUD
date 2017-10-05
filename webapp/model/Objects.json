@@ -1,0 +1,31 @@
+{
+	"Objects": [{
+			"Productname": "Chocolate",
+			"productid": "123",
+			"Quantify": "good",
+			"productweight": "100 grams"
+		},
+
+		{
+			"Productname": "Milk",
+			"productid": "534",
+			"Quantify": "good",
+			"productweight": "200 grams"
+		},
+
+		{
+			"Productname": "Honey",
+			"productid": "323",
+			"Quantify": "good",
+			"productweight": "1100 grams"
+		},
+		
+		{
+			"Productname": "Grass",
+			"productid": "353",
+			"Quantify": "good",
+			"productweight": "1 grams"
+		}
+	]
+
+}

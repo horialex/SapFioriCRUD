@@ -1,0 +1,55 @@
+<edmx:Edmx Version="1.0"
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZHORIGATEWAY_SRV" xml:lang="ro" sap:schema-version="1"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Subscription" sap:semantics="subscriptions" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="32" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="user" Type="Edm.String" MaxLength="12" m:FC_TargetPath="SyndicationAuthorName" m:FC_KeepInContent="false" sap:creatable="false" sap:filterable="false"/>
+                <Property Name="updated" Type="Edm.DateTime" Precision="0" m:FC_TargetPath="SyndicationUpdated" m:FC_KeepInContent="false" sap:creatable="false" sap:filterable="false"/>
+                <Property Name="title" Type="Edm.String" MaxLength="255" m:FC_TargetPath="SyndicationTitle" m:FC_KeepInContent="false" sap:filterable="false"/>
+                <Property Name="deliveryAddress" Type="Edm.String" sap:filterable="false"/>
+                <Property Name="persistNotifications" Type="Edm.Boolean" sap:filterable="false"/>
+                <Property Name="collection" Type="Edm.String" MaxLength="40" sap:filterable="false"/>
+                <Property Name="filter" Type="Edm.String" sap:filterable="false"/>
+                <Property Name="select" Type="Edm.String" MaxLength="255" sap:filterable="false"/>
+                <Property Name="changeType" Type="Edm.String" MaxLength="30"/>
+            </EntityType>
+            <EntityType Name="Notification" sap:semantics="notifications" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="32"/>
+                <Property Name="collection" Type="Edm.String" MaxLength="40"/>
+                <Property Name="title" Type="Edm.String" m:FC_TargetPath="SyndicationTitle" m:FC_KeepInContent="false"/>
+                <Property Name="updated" Type="Edm.DateTime" Precision="0" m:FC_TargetPath="SyndicationUpdated" m:FC_KeepInContent="false"/>
+                <Property Name="changeType" Type="Edm.String" MaxLength="30"/>
+                <Property Name="entriesOfInterest" Type="Edm.Int32"/>
+                <Property Name="recipient" Type="Edm.String" MaxLength="112" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="zhoratiustructure" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Empno"/>
+                </Key>
+                <Property Name="Empno" Type="Edm.String" Nullable="false" MaxLength="6" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fname" Type="Edm.String" Nullable="false" MaxLength="20" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lname" Type="Edm.String" Nullable="false" MaxLength="20" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Addrs" Type="Edm.String" Nullable="false" MaxLength="50" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZHORIGATEWAY_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="SubscriptionCollection" EntityType="ZHORIGATEWAY_SRV.Subscription" sap:content-version="1"/>
+                <EntitySet Name="NotificationCollection" EntityType="ZHORIGATEWAY_SRV.Notification" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="zhoratiustructureSet" EntityType="ZHORIGATEWAY_SRV.zhoratiustructure" sap:searchable="true" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="./sap/opu/odata/sap/ZHORIGATEWAY_SRV/$metadata"
+                xmlns:atom="http://www.w3.org/2005/Atom"/>
+                <atom:link rel="latest-version" href="./sap/opu/odata/sap/ZHORIGATEWAY_SRV/$metadata"
+                    xmlns:atom="http://www.w3.org/2005/Atom"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

@@ -1,0 +1,44 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" controllerName="testTest.controller.Slave">
+	<App id="app">
+		<Page title="Slave" showNavButton="true" navButtonPress="onBack">
+			<content>
+				<!-- TTTTESTTT -->
+				<!-- TTTTESTTT -->
+				<Table noDataText="No data" id="abc" items="{path: '/Objects'}">
+					<items>
+						<ColumnListItem id="__item0">
+							<cells>
+								<Text text="{Productname}"></Text>
+								<Text text="{productid}"></Text>
+								<Text text="{Quantify}" ></Text>
+								<Text text="{productweight}"></Text>
+							</cells>
+						</ColumnListItem>
+					</items>
+					<headerToolbar>
+						<Toolbar>
+							<content>
+								<Label text="Maistrii"></Label>
+							</content>
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column width ="11rem">
+							<Label text="Product name"></Label>
+						</Column>
+							<Column width ="11rem">
+							<Label text="Product id"></Label>
+						</Column>
+							<Column width ="11rem">
+							<Label text="Qualtiy"></Label>
+						</Column>
+							<Column width ="11rem">
+							<Label text="Weight"></Label>
+						</Column>
+						
+					</columns>
+					</Table>
+				</content>
+			</Page>
+		</App>
+	</mvc:View>

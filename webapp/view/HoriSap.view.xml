@@ -1,0 +1,63 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" controllerName="testTest.controller.HoriSap"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<App id="app">
+		<Page title="Hori SAP CRUD operations" showNavButton="true" navButtonPress="onBack">
+			<content>
+				<Table id="test1" inset="false" mode="SingleSelectLeft" items="{/zhoratiustructureSet}">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="Persoane" level="H2"/>
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column>
+							<Text text="Employee ID"/>
+						</Column>
+						<Column>
+							<Text text="First Name"/>
+						</Column>
+						<Column>
+							<Text text="Last Name"/>
+						</Column>
+						<Column>
+							<Text text="Address"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text text="{Empno}"/>
+								<Text text="{Fname}"/>
+								<Text text="{Lname}"/>
+								<Text text="{Addrs}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+				<Button id="idDisplay" press="onDisplay" text="Display"/>
+				<Button id="idUpdate" press="onUpdate" text="Update"/>
+				<Button id="idCreate" press="onCreate" text="Create"/>
+				<Button id="idDelete" press="onDelete" text="Delete"/>
+				<l:Grid defaultSpan="L12 M12 S12" width="auto" id="gridId">
+					<l:content>
+						<f:SimpleForm id="SimpleFormChange354" minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+							title="Employee details" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1" class="editableForm">
+							<f:content>
+								<Label text="Employee Id"/>
+								<Input value="{Empno}" id="empId"/>
+								<Label text="First Name"/>
+								<Input value="{Fname}" id="fnameId"/>
+								<Label text="Last Name"/>
+								<Input value="{Lname}" id="lnameId"/>
+								<Label text="Address"/>
+								<Input value="{Addrs}" id="addrsId"/>
+								<Label text=""/>
+								<Button id="saveBtnId" text="Save" press="onSave"/>
+							</f:content>
+						</f:SimpleForm>
+					</l:content>
+				</l:Grid>
+			</content>
+		</Page>
+	</App>
+</mvc:View>

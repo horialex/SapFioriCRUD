@@ -1,0 +1,149 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "testTest",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZHORIGATEWAY_SRV": {
+				"uri": "/Horatiu/sap/opu/odata/sap/ZHORIGATEWAY_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZHORIGATEWAY_SRV/metadata.xml"
+				}
+			},
+			"Northwind.svc": {
+				"uri": "/northwind/V2/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/Northwind.svc/metadata.xml"
+				}
+			},
+			"GWSAMPLE_BASIC": {
+				"uri": "/sap/opu/odata/iwbep/GWSAMPLE_BASIC/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/GWSAMPLE_BASIC/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "testTest.view.Master",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "testTest.i18n.i18n"
+				}
+			},
+			"Model": {
+				"dataSource": "ZHORIGATEWAY_SRV"
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "testTest.view",
+				"controlId": "app",
+				"transition": "slide",
+				"controlAggregation": "pages"
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "master",
+					"target": "master"
+				},
+				{
+					"pattern": "second",
+					"name": "second",
+					"target": "second"
+				},
+				{
+					"pattern": "third",
+					"name": "third",
+					"target": "third"
+				},
+				{
+					"pattern": "fourth",
+					"name": "fourth",
+					"target": "fourth"
+				}
+			],
+			"targets": {
+				"master": {
+					"viewName": "Master"
+				},
+				"second": {
+					"viewName": "Slave"
+				},
+				"third": {
+					"viewName": "Maistrii"
+				},
+				"fourth": {
+					"viewName": "HoriSap"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		}
+	}
+}

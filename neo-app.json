@@ -1,0 +1,57 @@
+{
+  "welcomeFile": "/webapp/index.html",
+  "routes": [
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/destinations/rmb",
+      "target": {
+        "type": "destination",
+        "name": "rmb"
+      },
+      "description": "Test destination"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/Horatiu",
+      "target": {
+        "type": "destination",
+        "name": "Horatiu"
+      },
+      "description": "Horatiu Test"
+    },
+    {
+      "path": "/northwind",
+      "target": {
+        "type": "destination",
+        "name": "northwind"
+      },
+      "description": "Northwind Odata Service"
+    },
+    {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "ES4",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "ES4 Demo System"
+    }
+  ],
+  "sendWelcomeFileRedirect": true
+}
